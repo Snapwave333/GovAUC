@@ -1,0 +1,66 @@
+{
+  "database": {
+    "url": "sqlite:///govauc.db"
+  },
+  "scraping": {
+    "default_rate_limit": 2.0,
+    "max_concurrent_requests": 10,
+    "user_agent_rotation": true,
+    "retry_attempts": 3
+  },
+  "analysis": {
+    "min_profit_threshold": 100,
+    "min_roi_percentage": 50,
+    "confidence_threshold": 0.5,
+    "gem_score_threshold": 0.8
+  },
+  "sniping": {
+    "enabled": false,
+    "default_snipe_seconds": 30,
+    "max_concurrent_snipes": 5,
+    "auto_schedule_gems": false
+  },
+  "budget": {
+    "total_budget": 10000.0,
+    "max_per_item": 1000.0,
+    "reserve_percentage": 20
+  },
+  "notifications": {
+    "enabled": true,
+    "email": null,
+    "slack_webhook": null,
+    "urgency_levels": ["high", "critical"]
+  },
+  "sites": [
+    {
+      "name": "GSA Auctions",
+      "url": "https://gsaauctions.gov",
+      "site_type": "federal",
+      "scraper_class": "GSAScraper",
+      "requires_auth": false,
+      "rate_limit_seconds": 2.0
+    },
+    {
+      "name": "GovPlanet",
+      "url": "https://www.govplanet.com",
+      "site_type": "federal",
+      "scraper_class": "GovPlanetScraper",
+      "requires_auth": false,
+      "rate_limit_seconds": 2.0
+    },
+    {
+      "name": "PublicSurplus",
+      "url": "https://www.publicsurplus.com",
+      "site_type": "state_local",
+      "scraper_class": "PublicSurplusScraper",
+      "requires_auth": false,
+      "rate_limit_seconds": 2.0
+    }
+  ],
+  "api_keys": {
+    "ebay_app_id": "",
+    "kbb_api_key": "",
+    "openai_api_key": "",
+    "anthropic_api_key": ""
+  }
+}
